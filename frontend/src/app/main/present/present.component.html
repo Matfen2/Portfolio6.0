@@ -1,0 +1,129 @@
+<!-- ME -->
+<section id="me">
+  <div class="container-fluid">
+    <div class="navbar navbar-expand-lg">
+      <div class="navbar-brand" [routerLink]="'/present'">MF</div>
+    </div>
+    <div class="myProfil">
+      <div class="containProfil" [@positionPresent]="show ? 'center' : 'noCenter'">
+        <h1 class="myName" (click)="showAnimate()" [@pseudoMove]="show ? 'stop' : 'move'">{{show ? 'X' : 'MATHIEU
+          FENOUIL'}}</h1>
+
+        <div class="showAnimate" [@openAnimate]="show ? 'open' : 'close'">
+          <div class="containPresent">
+            <div class="row">
+              <div class="col-lg-5">
+                <img src="/assets/pict/pictMeOne.jpg" class="img-fluid w-100" alt="pictMe" />
+              </div>
+              <div class="col-lg-7">
+                <p class="job">Développeur web Angular</p>
+                <div class="describe">"Grand passionné du gaming, je suis un développeur web Angular autodidacte, qui souhaite
+                  peaufiner mes méthodes
+                  techniques et artistiques auprès des entreprises, des personnes plus ou moins liés à ce média. Mon but est de
+                  créer des
+                  sites basés sur les jeux vidéos, de créer des jeux."</div>
+                <div class="listPoints">
+                  <p class="strong">Mes points forts : autonome, adaptation, ouverture d'esprit</p>
+                  <p class="weak">Mes points faibles : perfectionniste, syndrome de l'imposteur</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACITY -->
+<section class="Capacity" id="my-capacity">
+  <h1 class="mySuperPower">Mes compétences/Mon CV</h1>
+  <div id="myListCapacities">
+    <ul class="frontend">
+      <li class="framework">HTML</li>
+      <li class="framework">CSS</li>
+      <li class="framework">SCSS</li>
+      <li class="framework">BOOTSTRAP</li>
+      <li class="framework">JAVASCRIPT</li>
+      <li class="framework">ANGULAR</li>
+    </ul>
+    <ul class="backend">
+      <li class="framework">NODE JS</li>
+      <li class="framework">MYSQL</li>
+      <li class="framework">PHPADMIN</li>
+      <li class="framework">SECURITY</li>
+      <li class="framework">API/CRUD OPERATIONS</li>
+    </ul>
+  </div>
+  <button type="button" id="btnCV" (click)="downloadCV()">Télécharger Mon CV</button>
+</section>
+
+<!-- MES PROJETS -->
+<section class="idea" id="myProjets">
+  <h1 class="nameProjet">MES PROJETS</h1>
+  <div class="row" id="listProjets">
+    <div class="col-lg-4" [id]="projet.id" *ngFor="let projet of projets">
+      <img [src]="projet.pict" [routerLink]="['/projects', projet.id]" class="img-fluid w-100" alt="pictProject"
+        appCard />
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="myContact" id="contact">
+  <h1 class="titleContact">Contact</h1>
+  <div class="contactModal">
+    <div class="form-area">
+      <form [formGroup]="answer" (ngSubmit)="contact()">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-6">
+              <label></label>
+              <input type="email" class="form-control" name="adress" placeholder="Adresse email"
+                formControlName="adress" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" minlength="15"
+                [ngClass]="{ 'is.invalid': answer.get('adress')?.touched && answer.get('adress')?.invalid }" />
+              <div class="warning"
+                *ngIf="answer.get('adress')?.invalid && (answer.get('adress')?.dirty || answer.get('adress')?.touched)">
+                <div class="alert alert-danger" *ngIf="answer.get('adress')?.hasError('required')">L'adresse email
+                  est
+                  requise</div>
+                <div class="alert alert-danger" *ngIf="answer.get('adress')?.hasError('pattern')">La forme de
+                  l'adresse
+                  email est incorrecte</div>
+                <div class="alert alert-danger" *ngIf="answer.get('adress')?.hasError('minlength')">L'adresse email
+                  doit
+                  avoir au moins 15 caractères</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <label></label>
+              <input type="text" class="form-control" name="subject" placeholder="Sujet de conversation"
+                formControlName="subject"
+                [ngClass]="{ 'is.invalid': answer.get('subject')?.touched && answer.get('subject')?.invalid }" />
+              <div class="warning"
+                *ngIf="answer.get('subject')?.invalid && (answer.get('subject')?.dirty || answer.get('subject')?.touched)">
+                <div class="alert alert-danger" *ngIf="answer.get('subject')?.hasError('required')">Le sujet de
+                  conversation est requis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label></label>
+          <textarea name="message" placeholder="Message" formControlName="message" minlength="10" cols="20" rows="7"
+            [ngClass]="{ 'is.invalid': answer.get('message')?.touched && answer.get('message')?.invalid }"></textarea>
+          <div class="warning"
+            *ngIf="answer.get('message')?.invalid && (answer.get('message')?.dirty || answer.get('message')?.touched)">
+            <div class="alert alert-danger" *ngIf="answer.get('message')?.hasError('required')">Le message est
+              requis
+            </div>
+            <div class="alert alert-danger" *ngIf="answer.get('message')?.hasError('minlength')">Le message doit
+              avoir
+              au moins 10 caractères</div>
+          </div>
+        </div>
+        <button type="submit" id="btnSend" [disabled]="answer.invalid">ENVOYER</button>
+      </form>
+    </div>
+  </div>
+</section>
