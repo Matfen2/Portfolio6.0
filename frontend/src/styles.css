@@ -208,8 +208,11 @@ body {
 
 #myProjets {
   margin: -16px auto;
+  background-size: cover;
   padding: 10px 0px 30px 0px;
-  background-color: rgb(48, 48, 48);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/pict/projetsWallpaper.jpeg");
 }
 #myProjets .nameProjet {
   color: azure;
@@ -365,10 +368,35 @@ body {
   text-align: center;
   font-family: linkStart;
 }
-.showProjet .containProjet .img-fluid {
-  margin: 15px auto;
-  height: 650px;
-  max-width: 1150px;
+.showProjet .containProjet .info {
+  display: flex;
+  flex-direction: column;
+}
+.showProjet .containProjet .info .img-fluid {
+  height: 620px;
+  max-width: 1070px;
+}
+.showProjet .containProjet .info #btnSeeProjet {
+  width: 8%;
+  margin: 10px auto;
+  display: block;
+  font-size: 1.4em;
+  border-radius: 7px;
+  background: transparent;
+  border: 2px solid azure;
+  text-shadow: 0 1px 0px #000000, 1px 0 0px #000000, 1px 2px 1px #000000, 2px 2px 3px #000000, 2px 2px 2px #ffffff, 2px 2px 0px #ffffff, 2px 2px 8px rgba(206, 206, 206, 0.13);
+}
+.showProjet .containProjet .info #btnSeeProjet a {
+  font-family: linkStart;
+  color: azure;
+  text-decoration: none;
+}
+.showProjet .containProjet .info #btnSeeProjet a:hover {
+  color: black;
+  text-shadow: 0 1px 0px #ffffff, 1px 0 0px #ffffff, 1px 0px 1px #000000, 2px 2px 3px #000000, 2px 2px 2px #ffffff, 2px 2px 0px #ffffff, 2px 2px 8px rgba(206, 206, 206, 0.13);
+}
+.showProjet .containProjet .info #btnSeeProjet:hover {
+  background-color: azure;
 }
 .showProjet .containProjet .listFrameworks {
   margin: 7px auto;
@@ -409,7 +437,25 @@ body {
 .showProjet .containProjet .listFrameworks #btnGithub:hover {
   transform: scale(1.4);
 }
+.showProjet .containProjet .help {
+  color: azure;
+  font-size: 2em;
+  margin-top: 15px;
+  text-align: center;
+  font-family: linkStart;
+}
 
+@media screen and (max-width: 1440px) {
+  .showProjet .containProjet .info #btnSeeProjet {
+    width: 12%;
+    font-size: 1.6em;
+  }
+  .showProjet .containProjet .help {
+    margin: 19px auto;
+    display: block;
+    width: 800px;
+  }
+}
 @media screen and (max-width: 1220px) {
   #my-capacity #myListCapacities {
     display: flex;
@@ -447,16 +493,20 @@ body {
     padding-bottom: 15px;
     width: 70%;
   }
-  .showProjet {
-    height: 100vh;
+  .showProjet .containProjet .info .img-fluid {
+    height: 500px;
+    max-width: 800px;
   }
-  .showProjet #btnCloseProjet {
-    top: 1%;
-    left: 98%;
+  .showProjet .containProjet .info #btnSeeProjet {
+    width: 18%;
+    font-size: 1.6em;
+    margin: 13px auto;
   }
-  .showProjet .containProjet .img-fluid {
-    height: 520px;
-    max-width: 950px;
+  .showProjet .containProjet .help {
+    font-size: 1.8em;
+    margin: 19px auto;
+    display: block;
+    width: 800px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -575,16 +625,23 @@ body {
   #contact .titleContact {
     margin-top: -15px;
   }
-  .showProjet {
-    height: 100vh;
-  }
   .showProjet #btnCloseProjet {
-    top: 1%;
     left: 98%;
   }
-  .showProjet .containProjet .img-fluid {
-    height: 520px;
-    max-width: 710px;
+  .showProjet .containProjet .info .img-fluid {
+    height: 500px;
+    max-width: 670px;
+  }
+  .showProjet .containProjet .info #btnSeeProjet {
+    width: 24%;
+    font-size: 1.6em;
+    margin: 13px auto;
+  }
+  .showProjet .containProjet .help {
+    font-size: 1.8em;
+    margin: 19px auto;
+    display: block;
+    width: 720px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -677,29 +734,28 @@ body {
   #contact .contactModal {
     width: 85%;
   }
-  .showProjet {
-    height: 120vh;
-    height: 100vh;
-  }
   .showProjet #btnCloseProjet {
-    top: 1%;
     left: 96%;
   }
-  .showProjet .containProjet .img-fluid {
-    height: 520px;
-    max-width: 370px;
+  .showProjet .containProjet {
+    top: 54%;
   }
-  .showProjet .containProjet .listFrameworks {
-    display: flex;
-    flex-direction: column;
+  .showProjet .containProjet .info .img-fluid {
+    display: none;
   }
-  .showProjet .containProjet .listFrameworks #btnFirstLangage, .showProjet .containProjet .listFrameworks #btnSecondLangage, .showProjet .containProjet .listFrameworks #btnThirdLangage {
-    margin: 10px auto;
+  .showProjet .containProjet .info #btnSeeProjet {
+    width: 36%;
+    font-size: 1.6em;
+    margin: 13px auto;
+  }
+  .showProjet .containProjet .listFrameworks #btnThirdLangage {
+    margin-top: 11px;
+  }
+  .showProjet .containProjet .help {
+    font-size: 1.8em;
+    margin: 19px auto;
     display: block;
-    width: 60%;
-  }
-  .showProjet .containProjet .listFrameworks #btnGithub {
-    font-size: 1.5em;
+    width: 290px;
   }
   #present {
     padding: 20px;
@@ -762,17 +818,16 @@ body {
   #myProjets .lienProjets .lien {
     font-size: 1.6em;
   }
-  .showProjet {
-    height: 200vh;
-    height: 100vh;
-  }
   .showProjet #btnCloseProjet {
-    top: 1%;
     left: 96%;
   }
-  .showProjet .containProjet .img-fluid {
-    height: 460px;
-    max-width: 350px;
+  .showProjet .containProjet {
+    top: 54%;
+  }
+  .showProjet .containProjet .info #btnSeeProjet {
+    width: 46%;
+    font-size: 1.6em;
+    margin: 13px auto;
   }
 }
 @media screen and (max-width: 320px) {
@@ -782,17 +837,31 @@ body {
   #contact .contactModal {
     width: 92%;
   }
-  .showProjet {
-    height: 200vh;
-    height: 100vh;
-  }
   .showProjet #btnCloseProjet {
-    top: 1%;
-    left: 96%;
+    left: 95%;
   }
-  .showProjet .containProjet .img-fluid {
-    height: 450px;
-    max-width: 280px;
+  .showProjet .containProjet {
+    top: 54%;
+  }
+  .showProjet .containProjet .info .img-fluid {
+    display: none;
+  }
+  .showProjet .containProjet .info #btnSeeProjet {
+    width: 49%;
+    font-size: 1.6em;
+    margin: 13px auto;
+  }
+  .showProjet .containProjet .listFrameworks #btnSecondLangage {
+    margin-top: 9px;
+  }
+  .showProjet .containProjet .listFrameworks #btnThirdLangage {
+    margin-top: 9px;
+  }
+  .showProjet .containProjet .help {
+    font-size: 1.8em;
+    margin: 19px auto;
+    display: block;
+    width: 290px;
   }
   #present #btnClosePresent {
     top: 4%;

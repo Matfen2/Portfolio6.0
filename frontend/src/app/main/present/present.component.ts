@@ -76,7 +76,8 @@ export class PresentComponent implements OnInit {
   projets = [
     {
       id: 1,
-      pict: '/assets/pict/projets/tlouLogo.png',
+      pict: '/assets/pict/projets/SpiritsGamerLogo.png',
+      background: ''
     },
     {
       id: 2,
@@ -84,7 +85,7 @@ export class PresentComponent implements OnInit {
     },
     {
       id: 3,
-      pict: '/assets/pict/projets/massEffectLogo.png',
+      pict: '/assets/pict/projets/tlouLogo.png',
     },
   ];
 

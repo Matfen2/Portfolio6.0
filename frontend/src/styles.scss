@@ -241,8 +241,11 @@ $eigthColor: #075509;
 // PROJETS
 #myProjets {
   margin: -16px auto;
+  background-size: cover;
   padding: 10px 0px 30px 0px;
-  background-color: $sevenColor;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/pict/projetsWallpaper.jpeg');
   .nameProjet {
     color: $firstColor;
     margin: 5px auto;
@@ -407,11 +410,35 @@ $eigthColor: #075509;
       text-align: center;
       font-family: linkStart;
     }
-    .img-fluid {
-      margin: 15px auto;
-      height: 650px;
-      max-width: 1150px;
-    }
+    .info {
+      @include flex (column);
+        .img-fluid {
+          height: 620px;
+          max-width: 1070px;
+        }
+        #btnSeeProjet {
+          width: 8%;
+          margin: 10px auto;
+          display: block;
+          font-size: 1.4em;
+          border-radius: 7px;
+          background: transparent;
+          border: 2px solid $firstColor;
+          text-shadow: 0 1px 0px #000000, 1px 0 0px #000000, 1px 2px 1px #000000, 2px 2px 3px #000000, 2px 2px 2px #ffffff, 2px 2px 0px #ffffff, 2px 2px 8px rgba(206,206,206,0.13);
+          a {
+            font-family: linkStart;
+            color: $firstColor;
+            text-decoration: none;
+            &:hover {
+              color: $secondColor;
+              text-shadow: 0 1px 0px #ffffff, 1px 0 0px #ffffff, 1px 0px 1px #000000, 2px 2px 3px #000000, 2px 2px 2px #ffffff, 2px 2px 0px #ffffff, 2px 2px 8px rgba(206,206,206,0.13);
+            }
+          }
+          &:hover {
+            background-color: $firstColor;
+          }
+        }
+      }
     .listFrameworks {
       margin: 7px auto;
       #btnFirstLangage {
@@ -451,10 +478,34 @@ $eigthColor: #075509;
         }
       }
     }
+    .help {
+      color: azure;
+      font-size: 2.0em;
+      margin-top: 15px;
+      text-align: center;
+      font-family: linkStart;
+    }
   }
 }
 
 // MEDIA QUERRY
+@media screen and (max-width: 1440px) {
+  .showProjet {
+    .containProjet {
+      .info {
+        #btnSeeProjet {
+          width: 12%;
+          font-size: 1.6em;
+        }
+      }
+      .help {
+        margin: 19px auto;
+        display: block;
+        width: 800px;
+      }
+    }
+  }
+}
 @media screen and (max-width: 1220px) {
     #my-capacity {
       #myListCapacities {
@@ -523,15 +574,23 @@ $eigthColor: #075509;
     }
   }
   .showProjet {
-    #btnCloseProjet {
-      top: 1%;
-      left: 98%;
-    }
-    height: 100vh;
     .containProjet {
-      .img-fluid {
-        height: 520px;
-        max-width: 950px;
+      .info {
+        .img-fluid {
+          height: 500px;
+          max-width: 800px;
+        }
+        #btnSeeProjet {
+          width: 18%;
+          font-size: 1.6em;
+          margin: 13px auto;
+        }
+      }
+      .help {
+        font-size: 1.8em;
+        margin: 19px auto;
+        display: block;
+        width: 800px;
       }
     }
   }
@@ -724,14 +783,25 @@ $eigthColor: #075509;
   }
   .showProjet {
     #btnCloseProjet {
-      top: 1%;
       left: 98%;
     }
-    height: 100vh;
     .containProjet {
-      .img-fluid {
-        height: 520px;
-        max-width: 710px;
+      .info {
+        .img-fluid {
+          height: 500px;
+          max-width: 670px;
+        }
+        #btnSeeProjet {
+          width: 24%;
+          font-size: 1.6em;
+          margin: 13px auto;
+        }
+      }
+      .help {
+        font-size: 1.8em;
+        margin: 19px auto;
+        display: block;
+        width: 720px;
       }
     }
   }
@@ -873,27 +943,31 @@ $eigthColor: #075509;
     }
   }
   .showProjet {
-    height: 120vh;
     #btnCloseProjet {
-      top: 1%;
       left: 96%;
     }
-    height: 100vh;
     .containProjet {
-      .img-fluid {
-        height: 520px;
-        max-width: 370px;
+      top: 54%;
+      .info {
+        .img-fluid {
+          display: none;
+        }
+        #btnSeeProjet {
+          width: 36%;
+          font-size: 1.6em;
+          margin: 13px auto;
+        }
       }
       .listFrameworks {
-        @include flex (column);
-        #btnFirstLangage, #btnSecondLangage, #btnThirdLangage{
-          margin: 10px auto;
-          display: block;
-          width: 60%;
+        #btnThirdLangage {
+          margin-top: 11px;
         }
-        #btnGithub {
-          font-size: 1.5em;
-        }
+      }
+      .help {
+        font-size: 1.8em;
+        margin: 19px auto;
+        display: block;
+        width: 290px;
       }
     }
   }
@@ -972,16 +1046,17 @@ $eigthColor: #075509;
     }
   }
   .showProjet {
-    height: 200vh;
     #btnCloseProjet {
-      top: 1%;
       left: 96%;
     }
-    height: 100vh;
     .containProjet {
-      .img-fluid {
-        height: 460px;
-        max-width: 350px;
+      top: 54%;
+      .info {
+        #btnSeeProjet {
+          width: 46%;
+          font-size: 1.6em;
+          margin: 13px auto;
+        }
       }
     }
   }
@@ -1003,16 +1078,34 @@ $eigthColor: #075509;
     }
   }
   .showProjet {
-    height: 200vh;
     #btnCloseProjet {
-      top: 1%;
-      left: 96%;
+      left: 95%;
     }
-    height: 100vh;
     .containProjet {
-      .img-fluid {
-        height: 450px;
-        max-width: 280px;
+      top: 54%;
+      .info {
+        .img-fluid {
+          display: none;
+        }
+        #btnSeeProjet {
+          width: 49%;
+          font-size: 1.6em;
+          margin: 13px auto;
+        }
+      }
+      .listFrameworks {
+        #btnSecondLangage {
+          margin-top: 9px;
+        }
+        #btnThirdLangage {
+          margin-top: 9px;
+        }
+      }
+      .help {
+        font-size: 1.8em;
+        margin: 19px auto;
+        display: block;
+        width: 290px;
       }
     }
   }
