@@ -31,7 +31,7 @@ export class ProjectsComponent implements OnInit {
       langageTwo: 'TYPESCRIPT',
       langageThree: 'MYSQL/PHPMYADMIN',
       hrefGithub: 'https://spirits-gamer.vercel.app/main',
-      hrefSite: 'https://spirits-gamer.vercel.app/main',
+      hrefSite: 'https://spirits-gamer-jqdfu07dt-matfens-projects.vercel.app/main',
       help: "Entrer Dishonored dans search pour montrer mes capacités de connexion à distance avec le database crée sur Hostinger",
     },
     {
@@ -42,7 +42,7 @@ export class ProjectsComponent implements OnInit {
       langageTwo: 'TYPESCRIPT',
       langageThree: 'API/CRUD OPERATIONS',
       hrefGithub: 'https://github.com/Matfen2/Soul-s-Heroes',
-      hrefSite: 'https://souls-heroes-2.vercel.app/main',
+      hrefSite: 'https://souls-heroes-m4qwrvt8j-matfens-projects.vercel.app/main',
       help: "Entrer Batman dans search pour montrer mes capacités de connexion à distance avec le database crée sur Hostinger",
     },
     {
